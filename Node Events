@@ -1,0 +1,24 @@
+// Node Js Events module
+
+//import the events module from node
+//Beware that EventEmitter is a class
+//create a class called MyEmitter and inherit from EventEmitter
+//create a new object myEmitter
+//myEmitter.on is the same as(myEmitter.addListerner)
+//What the .on is doing is listening for an event to emit ! so the question is how is an event emitted ?
+//An event is emitted by using the .emit method!
+//The most important thing to note is that the name of the event to emit is passed to the .emit as an argument.
+//When the .emit is triggred a signal is sent to the .on method which then calls the callback function and logs ('Hey I got called)
+
+const EventEmitter = require('events');
+class MyEmitter extends EventEmitter{}
+
+
+let  myEmitter = new MyEmitter();
+
+myEmitter.on('calling',()=>{
+    console.log('Hey I just got called')
+});
+
+
+myEmitter.emit('calling');
