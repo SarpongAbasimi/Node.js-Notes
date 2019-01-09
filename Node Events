@@ -13,7 +13,6 @@
 const EventEmitter = require('events');
 class MyEmitter extends EventEmitter{}
 
-
 let  myEmitter = new MyEmitter();
 
 myEmitter.on('calling',()=>{
@@ -21,4 +20,17 @@ myEmitter.on('calling',()=>{
 });
 
 
+myEmitter.emit('calling');
+
+//setImmediate
+//setImmediate is like process.nextTick
+//It is called after the first event loop
+//This function logs out "Hey I just got called" before "I am process . next"
+
+myEmitter.on('calling',()=>{
+    setImmediate(()=>{
+        console.log('I am process . next')
+    });
+    console.log('Hey I just got called')
+});
 myEmitter.emit('calling');
