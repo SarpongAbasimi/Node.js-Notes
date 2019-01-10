@@ -59,3 +59,26 @@ myEmitter.emit('calling',{'name':'chris'});
 //running the programme logs 
 //Yes the name was chris
 //If the name value is changed, "Nahh man try agai will get logged"
+
+
+// Inherit from the event module uisng prototypes.
+
+const EventEmitter = require('events');
+
+function MyEmitter(){}
+
+MyEmitter.prototype = Object.create(EventEmitter.prototype);
+MyEmitter.constructor = MyEmitter;
+
+
+const newEmitter =  new MyEmitter();
+
+newEmitter.on("foo",()=>{
+    console.log('hello');
+})
+
+newEmitter.emit('foo');
+
+
+
+
