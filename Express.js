@@ -9,11 +9,12 @@
 //initialize Express
 
 const express = require('express');
-const dotenv = require('dotenv').config
-const process = require('process')
+const dotenv = require('dotenv').config;
+const process = require('process');
+const handlebar = require('handlebar');
 
 app=express()
-app.set(port,process.env.(name of the env variable)|| 3000)
+app.set(port,process.env.(name of the env variable)|| 3000);
 
 app.get('/',(req,res)=>{
   res.send('what You want to send goes here')
@@ -21,4 +22,31 @@ app.get('/',(req,res)=>{
 
 //Since the port was set to the environment variable , the get the variable and use it as the port.
 // if  there is no variable port 3000 will be used.
-app.listen(app.get(port))
+// The listen can take a second argument which is a callback function
+app.listen(app.get('port'),()=>{
+    console.log(`Listening on port ${app.get('port')}`)
+});
+
+// To add Static Files
+//In order to add static file set express.static to the path on the file
+//Remembet that /static will have to be in your url path when requesting for static files
+app.use('/static', express.static(path.join(__dirname ,'static')));
+
+
+//Express alllows for various templating engines
+//Jade , pug, express handle bar and more.
+// When setting the templating engine use
+app.engine('handlebars') //You can set other parameters
+//we can dell express where to find the layout('base template').
+//defaultLayout is the name of the  base template
+//extensionName if the name of the base template extension
+//layoutDir is the layout directory
+app.engine('handlebars',handlebars({defaultLayout :'layout',extensionName:'handlebars',layoutDir: __dirname + '/views/layouts/'}}))
+app.set('view engine', 'handlebar')
+
+
+
+
+
+
+
