@@ -2,7 +2,7 @@
 //Node "res.write" is low level when working with Express, its res.send
 // To set up your virtual environment use dotenv
 //create a file called .env and store in this file your environmentall variables
-//To access the enviroment virable use a.set('name of the environment variable')
+//To access the enviroment viriable use a.set('name of the environment variable')
 //Nodemon -> Remember to download that for hot reload
 
 
@@ -20,21 +20,21 @@ app.get('/',(req,res)=>{
   res.send('what You want to send goes here')
 });
 
-//Since the port was set to the environment variable , the get the variable and use it as the port.
-// if  there is no variable port 3000 will be used.
-// The listen can take a second argument which is a callback function
+
+// if  there is no variable port 3000 will be used since is was specified in line 17.
+// The listen can take a second argument which is a callback function.
 app.listen(app.get('port'),()=>{
     console.log(`Listening on port ${app.get('port')}`)
 });
 
 // To add Static Files
-//In order to add static file set express.static to the path on the file
-//Remembet that /static will have to be in your url path when requesting for static files
+//In order to add static file set express.static to the path on the file.
+//Remembet that /static will have to be in your url path when requesting for static files.
 app.use('/static', express.static(path.join(__dirname ,'static')));
 
 
-//Express alllows for various templating engines
-//Jade , pug, express handle bar and more.
+//Express alllows for various templating engines.
+//Jade , pug, express handle-bar and more.
 // When setting the templating engine use
 app.engine('handlebars') //You can set other parameters
 //we can dell express where to find the layout('base template').
