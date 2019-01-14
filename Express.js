@@ -48,7 +48,102 @@ app.set('view engine', 'handlebar')
 //Express.Router
 //An Express router provides a subset of Express methods. 
 //To create an instance of one, we invoke the .Router() method on the top-level Express import.
-//To use a router, we mount it at a certain path using app.use() and pass in the router as the second argument. 
+//To use a router, we mount it at a certain path using app.use() and pass in the router as the second argument.
+
+
+//Express CRUD Example
+
+const express =require('express');
+const dotenv =require('dotenv').config();
+const process = require('process');
+const Joi = require('joi');
+
+
+//create an instance of express
+const app = express();
+
+app.use(express.json());
+
+
+//Array of course
+const courses = [
+  {id: 1 ,name:'course1'},
+  {id: 2 ,name:'course2'},
+  {id: 3 ,name:'course3'},
+];
+
+app.get('/',(req,res,next)=>{
+    res.send('Hey welcome');
+})
+
+//get request of all courses
+app.get('/api/courses',(req,res,next)=>{
+    res.send(courses);
+})
+
+//get a single course
+app.get('/api/courses/:id',(req,res,next)=>{
+    const course = courses.find((ele)=> ele.id === parseInt(req.params.id));
+    if(course){
+        res.send(course)
+    }else{
+        res.status(404).send('Sorry could not find the given ID');
+    }
+})
+
+//Post to the course
+app.post('/api/courses',(req,res)=>{
+    const schema={
+        name: Joi.string().min(3).required()
+    }
+    const result =Joi.validate(req.body,schema)
+    if(result.error){
+        res.status(400).send(`Error : ${result.error}`);
+        return;
+    }
+    const course = {
+        id:courses.length +1,
+        name:req.body.name
+    };
+    courses.push(course);
+    res.send(course);
+});
+
+//Update the course
+app.put('/api/courses/:id',(req,res,next)=>{
+    //Find if the course actually exits
+    //If it doesn't exit return a 404 'Not Found'
+    const course = courses.find((ele)=> ele.id === parseInt(req.params.id));
+    if(course){
+        res.send(course)
+    }else{
+        res.status(404).send('Sorry could not find the given ID');
+    }
+
+    //Validate 
+    //If invalid return 400 -Bad Request
+    const schema={
+        name: Joi.string().min(3).required()
+    }
+
+    const result =Joi.validate(req.body,schema)
+    if(result.error){
+        res.status(400).send(`Error : ${result.error}`);
+        return;
+    }
+    //update
+    course.name = req.body.name;
+    res.send(course);
+
+})
+
+
+app.listen(process.env.PORT,()=>{
+    console.log(`Listening an Port ${process.env.PORT}`);
+})
+
+
+
 
 
 
