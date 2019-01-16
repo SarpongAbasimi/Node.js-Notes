@@ -29,6 +29,7 @@ fivePromise()
   })  // Prints 5
 
 //async ... wait 
+// await keyword halts the execution of an async function until a promise is no longer pending. 
 /*
 What is actually going on in the code below?
 Well, In the example below myPromise() is a function
