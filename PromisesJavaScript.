@@ -1,0 +1,16 @@
+//Constructing a Promise Object
+//This is How I understand Promisses In JavaScript.
+
+/*
+A promise is like doing a house cleaning on a saturday morning.
+Whiles You are playing music in the bacground , You are also sweeping the floor and
+doing your washing with Your washing machine at the same time.
+
+That is basicall a promise , You don't wait for your washing machine to finish your cloths
+before You start cleaning the house , You perform these tasks at the same time !
+
+Promises in Javascript has three states
+
+
+
+*/
