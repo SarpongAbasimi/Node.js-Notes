@@ -32,7 +32,7 @@ class HospitalEmployee {
   }
 }
 
-// When a class inherits from another call it has access to all the method of the parent class
+// When a class inherits from another class it has access to all the methods of the parent class
 //calling super and passing the name property to it is a way of telling Javascript to use the parent calls constructor to call the name.
 class Nurse extends HospitalEmployee {
   constructor(name, certifications) {
