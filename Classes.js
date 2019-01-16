@@ -7,13 +7,15 @@ The super keyword calls the constructor() of a parent class.
 Static methods are called on the class, but not on instances of the class.
 */
 
+
+//HospitalEmployee is the parent class that all other class inherit from
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
-    this._remainingVacationDays = 20;
+    this._remainingVacationDays = 20; // the ._ before a property name is a convention to say that is must not be altered.
   }
   
-  get name() {
+  get name() { //getter function.It is conventional to not call properties directly
     return this._name;
   }
   
@@ -30,9 +32,11 @@ class HospitalEmployee {
   }
 }
 
+// When a class inherits from another call it has access to all the method of the parent class
+//calling super and passing the name property to it is a way of telling Javascript to use the parent calls constructor to call the name.
 class Nurse extends HospitalEmployee {
   constructor(name, certifications) {
-    super(name);
+    super(name);                      
     this._certifications = certifications;
   } 
   
