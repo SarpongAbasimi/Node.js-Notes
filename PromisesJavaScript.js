@@ -79,6 +79,41 @@ Note that a promise can be invoked with
 
 */
 
+// Example of a promise and .then method 
+/*
+Note that the value passed to the
+ onFulfilled() and onRejected() are the strings passed
+ to resolve & reject in line 108.. These values are automatically passed by the promise to the .then() method.
+ No that the can be change.. 
+ for example I come have said alert for onFulfilled  alert(' succes') and that would have be dislayed insted of  'Yes yes'   
+*/
+const inventory = {
+  sunglasses: 1,
+  pants: 1088,
+  bags: 1344
+};
+
+
+const { sunglasses } =inventory;
+
+const onFulfilled = (value)=>{
+alert(value)
+}
+
+const onRejected=(value)=>{
+alert(value)
+}
+
+const checkInventory= new Promise((resolve,reject)=>{
+return sunglasses > 100 ? resolve('Yes yes'):reject('No no')
+}).then(onFulfilled,onRejected);
+
+
+const myAction = ()=>{
+return checkInventory();
+}
+myAction();
+
 
 
 
