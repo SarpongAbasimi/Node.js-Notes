@@ -114,20 +114,67 @@ return checkInventory();
 }
 myAction();
 
+//*********************************************************** .catch ****************************************************************
+
+/*
+Remember, .then() will return a promise with the same settled value as the promise it was called on if no appropriate handler was provided. 
+This implementation allows us to separate our resolved logic from our rejected logic. 
+Instead of passing both handlers into one .then(), we can chain a second .then() with a failure handler to a first .then() 
+with a success handler and both cases will be handled.
+
+
+Since JavaScript doesn't mind whitespace, 
+we follow a common convention of putting each part of this chain on a new line to make it easier to read. 
+To create even more readable code, we can use a different promise function: .catch().
+The .catch() function takes only one argument, onRejected. In the case of a rejected promise, 
+this failure handler will be invoked with the reason for rejection. 
+Using .catch() accomplishes the same thing as using a .then() with only a failure handler
+*/
+
+const inventory = {
+  sunglasses: 1,
+  pants: 1088,
+  bags: 1344
+};
+
+
+const { sunglasses } =inventory;
+
+const onFulfilled = (value)=>{
+alert(value)
+}
+
+const onRejected=(value)=>{
+alert(value)
+}
+
+const checkInventory= new Promise((resolve,reject)=>{
+return sunglasses > 100 ? resolve('Yes yes'):reject('No no')
+}).then(onFulfilled)
+	.catch(onRejected);
+
+
+const myAction = ()=>{
+return checkInventory();
+}
+
+myAction();
 
 
 
+//************* PROMISE REVIEW ***********************
+/*
+1)Promises are JavaScript objects that represent the eventual result of an asynchronous operation.
+2)Promises can be in one of three states: pending, resolved, or rejected.
+3)A promise is settled if it is either resolved or rejected 
+We construct a promise by using the new keyword and passing an executor function to the Promise constructor method.
+setTimeout() is a Node function which delays the execution of a callback function using the event-loop.
+We use .then() with a success handler callback containing the logic for what should happen if a promise resolves.
+use .catch() with a failure handler callback containing the logic for what should happen if a promise rejects.
+Promise composition enables us to write complex, asynchronous code that's still readable. We do this by chaining multiple .then()'s and .catch()'s.
+To use promise composition correctly, we have to remember to return promises constructed within a .then().
+We should chain multiple promises rather than nesting them.
+To take advantage of concurrency, we can use Promise.all().
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+*/
