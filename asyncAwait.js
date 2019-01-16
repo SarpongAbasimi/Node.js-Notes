@@ -28,3 +28,21 @@ fivePromise()
     console.log(resolvedValue);
   })  // Prints 5
 
+//async ... wait 
+/*
+What is actually going on in the code below?
+Well, In the example below myPromise() is a function
+that returns a promise.
+
+Within our async function, asyncFuncExample(), 
+we use await to halt our execution until myPromise() is resolved and assign its resolved value to the variable resolvedValue. 
+Then we log resolvedValue to the console. We're able to handle the logic for a promise in a way that reads like synchronous code.
+*/
+async function asyncFuncExample(){
+  let resolvedValue = await myPromise();
+  console.log(resolvedValue);
+}
+asyncFuncExample();
+
+
+
