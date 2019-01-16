@@ -59,3 +59,40 @@ return inventory.sunglasses > 0 ?resolve('Sunglasses order processed.') :reject(
  const orderPromise = orderSunglasses()
  
  console.log(orderPromise);
+
+//**************************************************** The .then() method in Promisese *********************************//
+
+/* 
+We are not always sure whether a promise will be resolved or rejected but we are sure that
+the promise will settle.
+Base on the success or failure of a promise , we might want to execute a task.
+This is when the .then() method comes in to play.
+This  method takes those callback functions as parameters known as handlers
+
+The first handler, sometimes called onFulfilled, is a success handler, and it should contain the logic for the promise resolving.
+The second handler, sometimes called onRejected, is a failure handler, and it should contain the logic for the promise rejecting.
+
+Note that a promise can be invoked with
+1) One handler
+2) Both handlers
+3)Neither of the handlers
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
