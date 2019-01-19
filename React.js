@@ -2,8 +2,8 @@
 This is how I understand React.js
 
 In React jsx , which is a javascript extension is used.
-A good example is const name = "<span> Hello World</span> "
-const name is javascript whiles ("<span> Hello World</span> ") is the jsx part.
+A good example is const name = <span> Hello World</span> 
+const name is javascript whiles (<span> Hello World</span> ) is the jsx part.
 
 Variables can be injectd into the jsx systax ,
 these variable are injected into them  between {}.
@@ -51,7 +51,7 @@ ReactDOM allows us to manipulate the DOM.
 class MyHello extends React.component{
 
 render(){
-    return "<h1> Hello World </h1>";
+    return <h1> Hello World </h1>;
   }
 }
 
