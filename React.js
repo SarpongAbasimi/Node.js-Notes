@@ -59,5 +59,9 @@ ReactDOM.render(<MyHello/>,document.getElementById('where to render');
 
 
 
+/*  How Props Work In React     */
+
+
+
 
 
