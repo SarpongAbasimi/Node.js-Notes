@@ -66,6 +66,11 @@ If this.props is logged to to console, it will display and object.
 Depending on whether a prop has been passed to the component or not , it might have
 key value pairs or it might be empty.
 
+Note.
+1)Prop can be passed from one component to another component
+2)Events can be passed as props
+3)And We can decide what to render to the screen based on a prop.
+
 */
 
 
