@@ -59,7 +59,14 @@ ReactDOM.render(<MyHello/>,document.getElementById('where to render');
 
 
 
-/*  How Props Work In React     */
+//  How Props Work In React  
+/*
+In React information is passed to components through props.
+If this.props is logged to to console, it will display and object.
+Depending on whether a prop has been passed to the component or not , it might have
+key value pairs or it might be empty.
+
+*/
 
 
 
