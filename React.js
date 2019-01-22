@@ -173,6 +173,8 @@ There are three main phases of lifecycle hooks.
 
 The Mounting lifecycle hook can be divided into 3 parts.
 componentWillMount - When You want something to happen once before the component is rendered to the screen this is where to put it.
+it is important to not that componentWillMount is only called when a component renders for the first time.
+
 render - Render is a lifecycle method that spits jsx to the screen.it belongs to two categories: mounting lifecycle methods, and updating lifecycle methods. 
 componentDidMount -
 
