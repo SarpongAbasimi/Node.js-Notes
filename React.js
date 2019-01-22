@@ -180,7 +180,53 @@ render - Render is a lifecycle method that spits jsx to the screen.it belongs to
 componentDidMount - This gets used a lot in React applications. This is called once the HTML has rendered on the screen.
 ComponentDidMount is the perfect place setTimeOut ,setInterval , talk to external API etc.
 
+
+
+updating --
+Updating does not happen the first time a component instance is rendered to the screen.
+It happens the second time only if the component receives props.
+The updating phase  can be grouped into 5 main parts
+1)componentWillReceiveProps
+2)shouldComponentUpdate
+3)componentwillupdate
+4)render
+5)componentDidUpdate
+
+
+componentWillReceiveProps get automatically passed an argument called 'nextProps'
 */
+
+import React from 'react';
+
+export class Example extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    alert("Check out the new props.text that "
+    	+ "I'm about to get:  " + nextProps.text);
+  }
+
+  render() {
+    return <h1>{this.props.text}</h1>;
+  }
+}
+
+
+// The first render won't trigger
+// componentWillReceiveProps:
+ReactDOM.render(
+	<Example text="Hello world" />,
+	document.getElementById('app')
+);
+
+
+// After the first render, 
+// subsequent renders will trigger
+// componentWillReceiveProps:
+setTimeout(() => {
+	ReactDOM.render(
+		<Example text="Hello world" />,
+		document.getElementById('app')
+	);
+}, 1000);
 
 
 
