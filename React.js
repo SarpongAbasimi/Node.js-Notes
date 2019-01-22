@@ -160,7 +160,15 @@ ReactDOM.render(
 );
 
 
-/* */
+/* 
+
+
+Life cycle Methods In React
+
+
+
+
+*/
 
 
 
