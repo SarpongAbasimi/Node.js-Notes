@@ -166,9 +166,15 @@ ReactDOM.render(
 // ---------------------- Life cycle Methods In React
 Lifecycle methods are methods that get called at certain moments in a component's life.
 
+There are three main phases of lifecycle hooks.
+1)Mounting
+2)updating
+3)Unmounting
 
-
-
+The Mounting lifecycle hook can be divided into 3 parts.
+componentWillMount - When You want something to happen once before the component is rendered to the screen this is where to put it.
+render - Render is a lifecycle method that spits jsx to the screen.it belongs to two categories: mounting lifecycle methods, and updating lifecycle methods. 
+componentDidMount -
 
 */
 
