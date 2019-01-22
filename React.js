@@ -163,7 +163,9 @@ ReactDOM.render(
 /* 
 
 
-Life cycle Methods In React
+// ---------------------- Life cycle Methods In React
+Lifecycle methods are methods that get called at certain moments in a component's life.
+
 
 
 
