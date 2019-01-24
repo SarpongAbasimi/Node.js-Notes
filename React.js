@@ -1,12 +1,12 @@
 /*
 This is how I understand React.js
 
-In React jsx , which is a javascript extension is used.
+In React jsx,which is a javascript extension is used in components.
 A good example is const name = <span> Hello World</span> 
 const name is javascript whiles (<span> Hello World</span> ) is the jsx part.
 
 Variables can be injectd into the jsx systax ,
-these variable are injected into them  between {}.
+these variable are injected into jsx syntax between {}.
 
 Attributes can be passed to the jxs systax just like normal html.
 However, it is important to not that attributes such as
