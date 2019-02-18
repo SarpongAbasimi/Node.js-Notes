@@ -11,3 +11,23 @@ The error communicates to Mocha that a test has failed, and Mocha logs the error
 
 */
 const assert = require('assert')
+describe("",()=>{
+  it("",()=>{
+    //setup
+    const firNum = 4;
+    const secNum = 5;
+    const expected = 9;
+    
+    //Exercise 
+    const result = firNum + secNum;
+    
+    //verify
+    asser.ok(result === expected)
+ 
+  });
+});
+
+
+//Using assert.equal
+
+
