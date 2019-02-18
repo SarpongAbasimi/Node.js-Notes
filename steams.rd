@@ -27,5 +27,5 @@ passing in the request and response objects of the incoming request.
 Request and response objects come with a number of properties and methods of their own, and within the requestListener function, 
 we can access information about the request via the request object passed in.
 The requestListener is responsible for setting the response header and body.
-The requestListener must signal that the interaction is complete by calling the response.end() method
+The requestListener must signal that the interaction is complete by calling the response.end() method.
 
