@@ -22,7 +22,7 @@ describe("",()=>{
     const result = firNum + secNum;
     
     //verify
-    asser.ok(result === expected)
+    assert.ok(result === expected)
  
   });
 });
