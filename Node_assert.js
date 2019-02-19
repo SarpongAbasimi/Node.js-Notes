@@ -9,6 +9,15 @@ In this case 6 - 1 === 5 evaluates to true, so no error is thrown.
 If an argument passed to assert.ok() evaluates to false, an AssertionError is thrown. 
 The error communicates to Mocha that a test has failed, and Mocha logs the error message to the console
 
+TDD in javaScript
+// setup
+//Exercise
+//Verify
+//TearDown
+
+//GOOD PRACTICES
+RED => GREEN => REFACTOR CYCLE
+
 */
 const assert = require('assert')
 describe("",()=>{
