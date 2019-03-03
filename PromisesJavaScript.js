@@ -175,6 +175,20 @@ myAction();
 9)To use promise composition correctly, we have to remember to return promises constructed within a .then().
 10)We should chain multiple promises rather than nesting them.
 11)To take advantage of concurrency, we can use Promise.all().
-
-
 */
+
+/* Fetch In JavaScript */
+fetch('api').then(response =>{
+	if(response.ok){
+		return response.json
+	}
+	throw new Error('there was a problem')
+},networkError=>{
+	return networkError.message
+});
+
+.then(responseData = >{
+	//Do what ever Yiu want with the response data
+})
+
+
