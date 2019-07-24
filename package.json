@@ -1,0 +1,26 @@
+{
+  "name": "Node.js-Notes",
+  "version": "1.0.0",
+  "description": "<h1 align='center'>   Node. </h1>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SarpongAbasimi/Node.js-Notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarpongAbasimi/Node.js-Notes/issues"
+  },
+  "homepage": "https://github.com/SarpongAbasimi/Node.js-Notes#readme",
+  "dependencies": {
+    "nodemon": "^1.19.1",
+    "save-dev": "^2.0.0"
+  }
+}
