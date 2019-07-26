@@ -3,10 +3,17 @@ process = require('process'),
 fs = require('fs'),
 path = require('path');
 
+
 const server = http.createServer((req, res)=> {
-  res.writeHead(200, { contentType: 'text/plain' })
-  res.write('hello')
-  res.end()
+  const filePath = path.join(__dirname, '../public/templates/index.html')
+  res.writeHead(200, {contentType: 'text/html'})
+  fs.readFile(filePath , (err, filedata)=> {
+    if(err){
+      res.write(err)
+    }
+    res.write(filedata)
+    res.end()
+  });
 })
 
 const PORT = process.env.PORT || 3000;
