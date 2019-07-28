@@ -7,6 +7,7 @@ path = require('path');
 const server = http.createServer((req, res)=> {
   const filePath = path.join(__dirname, '../public/templates/index.html')
   let requestUrl = req.url;
+  
   switch (requestUrl) {
     case '/':
       fs.readFile(filePath , (err, filedata)=> {
@@ -20,7 +21,6 @@ const server = http.createServer((req, res)=> {
       res.end()
     });    
       break;
-      
     case '/static/index.css':
       fs.readFile(path.join(__dirname, '../public/static/index.css'), (err, data)=>{
         if(err){
@@ -39,6 +39,7 @@ const server = http.createServer((req, res)=> {
       res.end()
       break;
   }
+
 });
 
 const PORT = process.env.PORT || 3000;
